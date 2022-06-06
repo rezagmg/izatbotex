@@ -14,7 +14,7 @@ global.APIs = {
 
 // Apikey Website Api
 global.APIKeys = {
-	'https://zenzapis.xyz': 'izatbotex',
+	'https://zenzapis.xyz': 'Your Key',
 }
 
 // Other
