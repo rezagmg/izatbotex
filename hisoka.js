@@ -1294,7 +1294,7 @@ break
             let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
             if (!/image/.test(mime)) throw respond
             if (!text) throw respond
-            asu = m.reply(mess.wait)
+            m.reply(mess.wait)
             atas = text.split('|')[0] ? text.split('|')[0] : '-'
             bawah = text.split('|')[1] ? text.split('|')[1] : '-'
             let dwnld = await quoted.download()
