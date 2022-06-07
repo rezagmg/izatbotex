@@ -1289,6 +1289,21 @@ break
            await hisoka.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'izatbotex', 'Rezadevv', m, {asSticker: true})
 
          }
+         break
+           case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
+            let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
+            if (!/image/.test(mime)) throw respond
+            if (!text) throw respond
+            asu = m.reply(mess.wait)
+            atas = text.split('|')[0] ? text.split('|')[0] : '-'
+            bawah = text.split('|')[1] ? text.split('|')[1] : '-'
+            let dwnld = await quoted.download()
+            let { floNime } = require('./lib/uploader')
+            let fatGans = await floNime(dwnld)
+            let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans.result.url}`
+            let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.author })
+            await fs.unlinkSync(FaTiH)
+            }
 	    break
             case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Image'
@@ -2655,7 +2670,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
 
 ┌──⭓ *Random Menu*
 │
-│⭔ ${prefix}membe
+│⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
 │⭔ ${prefix}darkjoke
 │⭔ ${prefix}cosplay
@@ -2816,6 +2831,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
 │⭔ ${prefix}ebinary
 │⭔ ${prefix}dbinary
 │⭔ ${prefix}styletext
+│⭔ ${prefix}smeme text1|text2
 │
 └───────⭓
 
