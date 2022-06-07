@@ -1,4 +1,4 @@
-# Hisoka-Morou
+# Izatbotex
 Script WhatsApp Bot Multi Device
 
 ## NOTE
@@ -13,7 +13,7 @@ This is Script of WhatsApp multi device, working with [`@adiwajshing/baileys`](h
 
 ## My Project
 WhatsApp Bot normal [`DikaArdnt/Hisoka-Morrow`](https://github.com/DikaArdnt/Hisoka-Morrow)
-WhatsApp Bot Multi Device [`DikaArdnt/Hisoka-Morou`](https://github.com/rezagmg/izat-bot)
+WhatsApp Bot Multi Device [`Rezagmg/Izatbotex`](https://github.com/rezagmg/izat-bot)
 
 
 ## UNTUK PENGGUNA WINDOWS/RDP
@@ -25,7 +25,7 @@ WhatsApp Bot Multi Device [`DikaArdnt/Hisoka-Morou`](https://github.com/rezagmg/
 
 ```bash
 git https://github.com/rezagmg/izat-bot.git
-cd Hisoka-Morou
+cd izat-bot
 npm install
 ```
 
