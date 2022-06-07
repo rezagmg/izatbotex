@@ -14,12 +14,12 @@ global.APIs = {
 
 // Apikey Website Api
 global.APIKeys = {
-	'https://zenzapis.xyz': 'Your Key',
+	'https://zenzapis.xyz': 'izatbotex',
 }
 
 // Other
-global.owner = ['6285742632270','6285759061744']
-global.premium = ['6285742632270']
+global.owner = ['6285742632270']
+global.premium = ['6285742632270', '6285759061744']
 global.packname = 'Izat Botex'
 global.author = 'Reza Devv'
 global.sdkm = '```Mohon Di Patuhi Peraturan Ini Terma Kasih 🙏```'
