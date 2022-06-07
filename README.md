@@ -38,7 +38,7 @@ apt install git -y
 apt install nodejs -y
 apt install ffmpeg -y
 git clone https://github.com/rezagmg/izat-bot.git
-cd Hisoka-Morou
+cd izat-bot
 npm install
 ```
 
