@@ -2033,8 +2033,20 @@ break
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
+	        case 'instagram': case 'ig': case 'igdl': {
+                if (!text) throw 'No Query Url!'
+                m.reply(mess.wait)
+                if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
+                    let anu = await fetchJson(api('zenz', '/downloader/instagram', { url: isUrl(text)[0] }, 'apikey'))
+                    for (let media of anu.data) hisoka.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
+                } else if (/\/stories\/([^\s&]+)/.test(isUrl(text)[0])) {
+                    let anu = await fetchJson(api('zenz', '/downloader/instastory', { url: isUrl(text)[0] }, 'apikey'))
+                    hisoka.sendMedia(m.chat, anu.media[0].url, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
+                }
+            }
+            break
 		/** Backup misal yg atas ga keluar video **/
-		case 'igeh': case 'instagram': case 'ig': {
+		case 'igeh': case 'instagram2': case 'ig2': case 'igdl2': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 
@@ -2097,7 +2109,7 @@ break
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/facebook', { url: text }, 'apikey'))
-                hisoka.sendMessage(m.chat, { video: { url: anu.result.medias.url }, caption: `⭔ Title : ${anu.result.title}`}, { quoted: m })
+                hisoka.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `➣ Title : ${anu.result.title}`}, { quoted: m })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
@@ -2576,6 +2588,7 @@ hisoka.send5ButImg(m.chat, asa, hisoka.user.name, sdk, btn)
 }
 break
 case 'thx': case 'thanksto': { 
+var jck = await getBuffer(picak+'Terimakasih Kepada')
 asu = `*「 THANKS TO 」*\n➤ *Rezadevv*\n➤ *Firman*\n➤ *Dika Ardnt*\n➤ *Penyedia Rest Api*\n➤ *My Support*`
 let btn = [{
                                 urlButton: {
@@ -2593,7 +2606,7 @@ let btn = [{
                                     id: 'command'
                                 }
                             }]
-hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
+hisoka.send5ButImg(m.chat, asu, hisoka.user.name, jck, btn)
 }
             break
             case 'owner': case 'creator': {
@@ -2833,7 +2846,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
 │
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
-│⭔ ${prefix}menu / ${prefix}help / ${prefix}?
+│⭔ ${prefix}menu / ${prefix}help
 │⭔ ${prefix}delete
 │⭔ ${prefix}infochat
 │⭔ ${prefix}quoted
