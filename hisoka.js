@@ -1648,10 +1648,10 @@ break
             break
             case 'pornhub': {
                 if (!text) throw `Example : ${prefix + command} text1|text2`
-                text1 = text.split('|')[0] ? text.split('|')[0] : '-'
-                text2 = text.split('|')[1] ? text.split('|')[1] : '-'
                 m.reply(mess.wait)
-                hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, {text: text1}, { text2: text2 }, 'apikey') }, caption: `Generate ${command}` }, { quoted: m})
+                atas = text.split('|')[0] ? text.split('|')[0] : '-'
+                bawah = text.split('|')[1] ? text.split('|')[1] : '-'
+                hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, {text: encodeURIComponent(atas), text2: encodeURIComponent(bawah) }, 'apikey') }, caption: `Generate ${command}` }, { quoted: m})
 	    }
         break
             case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
@@ -2717,6 +2717,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, jck, btn)
 │⭔ ${prefix}3dscifi
 │⭔ ${prefix}3drainbow
 │⭔ ${prefix}3dwaterpipe
+│⭔ ${prefix}pornhub text1|text2
 │⭔ ${prefix}halloweenskeleton
 │⭔ ${prefix}sketch
 │⭔ ${prefix}bluecircuit
