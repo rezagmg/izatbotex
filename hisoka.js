@@ -1645,6 +1645,13 @@ break
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/' + command, {}, 'apikey') }, caption: `Generate ${command}` }, { quoted: m})
 	    }
+            break
+            case 'pornhub': {
+                if (!text) throw `Example : ${prefix + command} text1+text2`
+                let [text1, text2] = text.split`+`
+                m.reply(mess.wait)
+                hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, {text: text1}, { text: text2 }, 'apikey') }, caption: `Generate ${command}` }, { quoted: m})
+	    }
         break
             case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
                 if (!text) throw `Example : ${prefix + command} text`
@@ -2539,7 +2546,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 m.reply(respon)
             }
             break
-            case 'list': case 'menu': case 'help': case '?': {
+            case 'list': case 'menu': case 'help': {
                 ana = `*Hai Kak ${m.pushName} Ada Yang Bisa Saya Bantu 🙂*\n➤ _Nama Bot: ${packname}_\n➤ _Nama Owner: ${author}_\n➤ _Runtime: ${runtime(process.uptime())}_`
                 let btn = [{
                                 urlButton: {
