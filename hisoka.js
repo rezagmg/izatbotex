@@ -1647,8 +1647,9 @@ break
 	    }
             break
             case 'pornhub': {
-                if (!text) throw `Example : ${prefix + command} text1+text2`
-                let [text1, text2] = text.split`+`
+                if (!text) throw `Example : ${prefix + command} text1|text2`
+                text1 = text.split('|')[0] ? text.split('|')[0] : '-'
+                text2 = text.split('|')[1] ? text.split('|')[1] : '-'
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, {text: text1}, { text2: text2 }, 'apikey') }, caption: `Generate ${command}` }, { quoted: m})
 	    }
