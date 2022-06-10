@@ -2600,7 +2600,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
             }
             break
             case 'allmenu': case 'command': {
-            var maseza = await getBuffer(picak+'Semua Menu')
+            var flob = await getBuffer(picak+'Semua Menu')
                 anu = `┌──⭓ *Group Menu*
 │
 │⭔ ${prefix}linkgroup
@@ -2920,7 +2920,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
                                     id: 'jadwalpelajaran'
                                 }
                             }]
-                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, maseza, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, flob, btn)
                      }
             break
             default:
