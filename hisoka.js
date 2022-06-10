@@ -74,6 +74,10 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	
 	
 	try {
+	    // Random Image Simple Menu
+            let picaks = [flaming,fluming,flarun,flasmurf]
+            let picak = picaks[Math.floor(Math.random() * picaks.length)]
+		
             let isNumber = x => typeof x === 'number' && !isNaN(x)
             let limitUser = isPremium ? global.limitawal.premium : global.limitawal.free
             let user = global.db.users[m.sender]
@@ -2596,6 +2600,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
             }
             break
             case 'allmenu': case 'command': {
+            var maseza = await getBuffer(picak+'Semua Menu')
                 anu = `┌──⭓ *Group Menu*
 │
 │⭔ ${prefix}linkgroup
@@ -2915,7 +2920,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, global.thumb, btn)
                                     id: 'jadwalpelajaran'
                                 }
                             }]
-                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, maseza, btn)
                      }
             break
             default:
