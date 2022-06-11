@@ -1655,7 +1655,7 @@ break
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-            case 'darkjoke': case 'cosplay': case 'meme': case 'memeindo': case 'patrick' {
+		case 'darkjoke': case 'cosplay': case 'meme': case 'memeindo': case 'patrick': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/' + command, {}, 'apikey') }, caption: `Generate ${command}` }, { quoted: m})
 	    }
