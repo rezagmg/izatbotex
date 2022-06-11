@@ -1,5 +1,6 @@
 /**
    * Create By Dika Ardnt.
+   * Recode By Reza Devv.
    * Contact Me on wa.me/6288292024190
    * Follow https://github.com/DikaArdnt
 */
@@ -2907,7 +2908,6 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, jck, btn)
 ┌──⭓ *Main Menu*
 │
 │⭔ ${prefix}ping
-│⭔ ${prefix}speedtest
 │⭔ ${prefix}owner
 │⭔ ${prefix}menu / ${prefix}help
 │⭔ ${prefix}delete
