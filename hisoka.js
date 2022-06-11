@@ -573,28 +573,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 	    }
             break
             case 'sewabot': case 'buypremium': {
-            hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/734d7a79b8689bbd03255.png' }, caption: `
-—————「 *SEWA | RUN BOT* 」—————
-
-  *_SEWA BOT_* 
-  *≻* Sewa Bot 15k (1 minggu)
-  *≻* Sewa Bot 20k (1 bulan)
-  *≻* Sewa Bot 25k (Permanen)
-
-  *JADI BOT* 
-  *≻* Jadi Bot 15k Tidak Owner (1 minggu)
-  *≻* Jadi Bot + Owner 20k (1 bulan)
-  *≻* Jadi Bot + Owner 25k (Permanen)
-
-  *JASA RUN BOT*
-  *≻* Run Bot 15k (1 minggu)
-  *≻* Run Bot 20k (1 bulan)
-  *≻* Run Bot 25k (Permanen)
-
-  *Minat? Langsung chat aja ya cuy 🐦*
-
-  *Contact person Owner* :
-  wa.me/${owner}` }, { quoted: m })
+            hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/734d7a79b8689bbd03255.png' }, caption: `——「 *SEWA | RUN BOT* 」——\n\n*_SEWA BOT_*\n*≻* Sewa Bot 15k (1 minggu)\n*≻* Sewa Bot 20k (1 bulan)\n*≻* Sewa Bot 25k (Permanen)\n\n*JADI BOT*\n*≻* Jadi Bot 15k Tidak Owner (1 minggu)\n*≻* Jadi Bot + Owner 20k (1 bulan)\n*≻* Jadi Bot + Owner 25k (Permanen)\n\n*JASA RUN BOT*\n*≻* Run Bot 15k (1 minggu)\n*≻* Run Bot 20k (1 bulan)\n*≻* Run Bot 25k (Permanen)\n\n*Minat? Langsung chat aja ya cuy 🐦*\n*Contact person Owner* :\nwa.me/${owner}` }, { quoted: m })
             }
             break
             case 'chat': {
@@ -2908,6 +2887,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, jck, btn)
 ┌──⭓ *Main Menu*
 │
 │⭔ ${prefix}ping
+│⭔ ${prefix}speedtest
 │⭔ ${prefix}owner
 │⭔ ${prefix}menu / ${prefix}help
 │⭔ ${prefix}delete
