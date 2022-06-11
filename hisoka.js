@@ -568,11 +568,12 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'sc': {
-            m.reply('Script : https://github.com/rezagmg/izat-bot\n\n Never give up for\nlive for life\nis a gift\n\nDonate : 6285742632270 (Dana/Gopay/Ovo/Shopee Pay/Link Aja)\n\n Dont Forget Donate')
+            m.reply('Script : https://github.com/rezagmg/izatbotex\n\n Never give up for\nlive for life\nis a gift\n\nDonate : 6285742632270 (Dana/Gopay/Ovo/Shopee Pay/Link Aja)\n\n Dont Forget Donate')
 	    }
             break
             case 'sewabot': case 'buypremium': {
-            hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/734d7a79b8689bbd03255.png' }, caption: `—————「 *SEWA | RUN BOT* 」—————
+            hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/734d7a79b8689bbd03255.png' }, caption: `
+—————「 *SEWA | RUN BOT* 」—————
 
   *_SEWA BOT_* 
   *≻* Sewa Bot 15k (1 minggu)
@@ -1183,7 +1184,7 @@ break
                     let btn = [{
                                 urlButton: {
                                     displayText: 'Source Code',
-                                    url: 'https://github.com/rezagmg/izat-bot'
+                                    url: 'https://github.com/rezagmg/izatbotex'
                                 }
                             }, {
                                 callButton: {
@@ -1212,7 +1213,7 @@ break
 		    let btn = [{
                                 urlButton: {
                                     displayText: 'Source Code',
-                                    url: 'https://github.com/rezagmg/izat-bot'
+                                    url: 'https://github.com/rezagmg/izatbotex'
                                 }
                             }, {
                                 callButton: {
@@ -2580,6 +2581,23 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 `.trim()
                 m.reply(respon)
             }
+break
+case 'speedtest': {
+    m.reply('Testing Speed...')
+    let cp = require('child_process')
+    let { promisify } = require('util')
+    let exec = promisify(cp.exec).bind(cp)
+    let o
+    try {
+    o = await exec('python speed.py')
+    } catch (e) {
+    o = e
+    } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) m.reply(stdout)
+        if (stderr.trim()) m.reply(stderr)
+            }
+            }
             break
             case 'list': case 'menu': case 'help': {
                 ana = `*Hai Kak ${m.pushName} Ada Yang Bisa Saya Bantu 🙂*\n➤ _Nama Bot: ${packname}_\n➤ _Nama Owner: ${author}_\n➤ _Runtime: ${runtime(process.uptime())}_`
@@ -2591,7 +2609,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                             }, {
                                 urlButton: {
                                     displayText: 'My Github 🔥',
-                                    url: 'https://www.github.com/rezagmg/izat-bot'
+                                    url: 'https://www.github.com/rezagmg/izatbotex'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -2622,7 +2640,7 @@ let btn = [{
                             }, {
                                 urlButton: {
                                     displayText: 'My Github 🔥',
-                                    url: 'https://www.github.com/rezagmg/izat-bot'
+                                    url: 'https://www.github.com/rezagmg/izatbotex'
                                 }
                             }]
                             sdk = fs.readFileSync('./lib/sdk.jpg')
@@ -2640,7 +2658,7 @@ let btn = [{
                             }, {
                                 urlButton: {
                                     displayText: 'My Github 🔥',
-                                    url: 'https://www.github.com/rezagmg/izat-bot'
+                                    url: 'https://www.github.com/rezagmg/izatbotex'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -2889,6 +2907,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, jck, btn)
 ┌──⭓ *Main Menu*
 │
 │⭔ ${prefix}ping
+│⭔ ${prefix}speedtest
 │⭔ ${prefix}owner
 │⭔ ${prefix}menu / ${prefix}help
 │⭔ ${prefix}delete
@@ -2965,7 +2984,7 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, jck, btn)
                 let btn = [{
                                 urlButton: {
                                     displayText: 'Source Code',
-                                    url: 'https://github.com/rezagmg/izat-bot'
+                                    url: 'https://github.com/rezagmg/izatbotex'
                                 }
                             }, {
                                 callButton: {
