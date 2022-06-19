@@ -5,6 +5,11 @@
    * Follow https://github.com/DikaArdnt
 */
 
+require("@adiwajshing/baileys")
+const ban = JSON.parse(fs.readFileSync('./src/banned.json'))
+const isBanned = JSON.parse(fs.readFileSync('./src/banned.json'))
+const { ind } = require('./izat')
+
 require('./config')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
