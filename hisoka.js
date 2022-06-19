@@ -22,6 +22,9 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 
+const ban = JSON.parse(fs.readFileSync('./database/user/banned.json'))
+const isBanned = JSON.parse(fs.readFileSync('./database/user/banned.json'))
+
 // read database
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
 if (global.db) global.db = {
@@ -1563,7 +1566,7 @@ break
                 hisoka.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
             }
             break
-            case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
+            case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
@@ -2580,7 +2583,7 @@ case 'speedtest': {
             }
             break
             case 'list': case 'menu': case 'help': {
-                ana = `*Hai Kak ${m.pushName} Ada Yang Bisa Saya Bantu 🙂*\n➤ _Nama Bot: ${packname}_\n➤ _Nama Owner: ${author}_\n➤ _Runtime: ${runtime(process.uptime())}_`
+                ana = `*Hai Kak ${m.pushName} Ada Yang Bisa Saya Bantu 😊*\n➤ _Nama Bot: ${packname}_\n➤ _Nama Owner: ${author}_\n➤ _Runtime: ${runtime(process.uptime())}_`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'My Owner 🖤',
@@ -2611,7 +2614,7 @@ case 'speedtest': {
                         }
                         break
 case 'sdk': {
-asa = `➤ 1.*JANGAN TELPON BOT/DI BLOKIR*\n➤ 2.*JANGAN SPAM/TELPON/VC OWNER KALO GA MAU DI BLOKIR*\n➤ 3.*JANGAN CHAT OWNER ANEH²*\n➤ 4.*OWNER TIDAK MELAYANI SV KONTAK, KALO LU BLUM PERKENALKAN DIRI LU*\n\n ${sdkm}`
+asa = `➤ 1.*JANGAN TELPON BOT/DI BLOKIR*\n➤ 2.*JANGAN SPAM/TELPON/VC OWNER KALO GA MAU DI BLOKIR*\n➤ 3.*JANGAN CHAT OWNER ANEH²*\n➤ 4.*OWNER TIDAK MELAYANI SV KONTAK, KALO LU BLUM PERKENALKAN DIRI LU*\n➤ 5.*BOT BERSIH DARI FEATURE 18+*\n\n ${sdkm}`
 let btn = [{
                                 urlButton: {
                                     displayText: 'My Owner 🖤',
@@ -2735,10 +2738,6 @@ hisoka.send5ButImg(m.chat, asu, hisoka.user.name, jck, btn)
 │⭔ ${prefix}husbu
 │⭔ ${prefix}neko
 │⭔ ${prefix}shinobu
-│⭔ ${prefix}waifus (nsfw)
-│⭔ ${prefix}nekos (nsfw)
-│⭔ ${prefix}trap (nsfw)
-│⭔ ${prefix}blowjob (nsfw)
 │
 └───────⭓
 
