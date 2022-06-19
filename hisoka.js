@@ -5,11 +5,6 @@
    * Follow https://github.com/DikaArdnt
 */
 
-require("@adiwajshing/baileys")
-const ban = JSON.parse(fs.readFileSync('./src/banned.json'))
-const isBanned = JSON.parse(fs.readFileSync('./src/banned.json'))
-const { ind } = require('./izat')
-
 require('./config')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
@@ -27,6 +22,9 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 
+const ban = JSON.parse(fs.readFileSync('./src/banned.json'))
+const isBanned = JSON.parse(fs.readFileSync('./src/banned.json'))
+const { ind } = require('./izat')
 
 // read database
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
