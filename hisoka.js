@@ -22,8 +22,9 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 
-const ban = JSON.parse(fs.readFileSync('./database/user/banned.json'))
-const isBanned = JSON.parse(fs.readFileSync('./database/user/banned.json'))
+const ban = JSON.parse(fs.readFileSync('./src/banned.json'))
+const isBanned = JSON.parse(fs.readFileSync('./src/banned.json'))
+const { ind } = require('./izat')
 
 // read database
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -814,6 +815,20 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 		await hisoka.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
+	case 'ban':
+		if (!isCreator) throw mess.owner
+		bnnd = body.slice(6)
+		ban.push(`${bnnd}@s.whatsapp.net`)
+		fs.writeFileSync('./src/banned.json', JSON.stringify(ban))
+		reply(`Nomor wa.me/${bnnd} telah dibanned !`)
+	break
+	case 'unban':
+		if (!isCreator) throw mess.owner
+		bnnd = body.slice(8)
+		ban.splice(`${bnnd}@s.whatsapp.net`, 1)
+		fs.writeFileSync('./src/banned.json', JSON.stringify(ban))
+		reply(`Nomor wa.me/${bnnd} telah di unban!`)
+	break
         case 'unblock': {
 		if (!isCreator) throw mess.owner
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
@@ -1567,6 +1582,7 @@ break
             }
             break
             case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
+		if (isBanned) return reply(ind.baned())
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
